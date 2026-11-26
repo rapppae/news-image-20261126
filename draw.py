@@ -98,10 +98,10 @@ def icon(draw, kind, cx, cy, color):
             x = cx - 30 + i * 24
             draw.rectangle([x, cy + 28 - h, x + 16, cy + 28], fill=color)
         draw.line([cx - 36, cy - 34, cx + 36, cy - 34], fill=color, width=4)
-    elif kind == 1:  # flame
-        draw.polygon([(cx, cy - 34), (cx + 22, cy + 6), (cx + 10, cy + 6),
-                      (cx + 18, cy + 28), (cx - 18, cy + 28), (cx - 10, cy + 6),
-                      (cx - 22, cy + 6)], fill=color)
+    elif kind == 1:  # flame: teardrop body with a hot gold core
+        draw.ellipse([cx - 20, cy - 6, cx + 20, cy + 30], fill=color)
+        draw.polygon([(cx, cy - 34), (cx + 16, cy + 2), (cx - 16, cy + 2)], fill=color)
+        draw.ellipse([cx - 9, cy + 6, cx + 9, cy + 28], fill=GOLD)
     elif kind == 2:  # tanker truck
         draw.rectangle([cx - 34, cy - 14, cx + 6, cy + 10], fill=color)
         draw.rectangle([cx + 10, cy - 6, cx + 32, cy + 10], fill=color)
